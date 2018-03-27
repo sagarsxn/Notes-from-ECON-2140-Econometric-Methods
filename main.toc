@@ -1,0 +1,16 @@
+\select@language {english}
+\contentsline {chapter}{\numberline {1}Consistency and Normality of Extremum Estimators}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Introduction}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Consistency}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Extremum Estimators}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Uniform Convergence}{2}{subsection.1.2.2}
+\contentsline {subsubsection}{\numberline {1.2.2.A}\texthl {Necessary} Conditions for Uniform Convergence}{3}{subsubsection.1.2.2.1}
+\contentsline {subsection}{\numberline {1.2.3}Examples}{3}{subsection.1.2.3}
+\contentsline {subsubsection}{\numberline {1.2.3.A}Additional Comments on GMM}{4}{subsubsection.1.2.3.1}
+\contentsline {subsection}{\numberline {1.2.4}(Point) Identification}{4}{subsection.1.2.4}
+\contentsline {subsubsection}{\numberline {1.2.4.A}Examples of Identification}{5}{subsubsection.1.2.4.1}
+\contentsline {subsubsection}{\numberline {1.2.4.B}Primitive Conditions for Identification}{6}{subsubsection.1.2.4.2}
+\contentsline {subsection}{\numberline {1.2.5}Main Result}{7}{subsection.1.2.5}
+\contentsline {subsubsection}{\numberline {1.2.5.A}Extra: Primitive Conditions for Continuity of an Expectation}{7}{subsubsection.1.2.5.1}
+\contentsline {section}{\numberline {1.3}Normality}{7}{section.1.3}
+\contentsline {chapter}{\numberline {2}Introduction}{8}{chapter.2}

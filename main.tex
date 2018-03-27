@@ -1,0 +1,228 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+%-------------------------------------------------------------------------------
+% FONT
+%-------------------------------------------------------------------------------
+\usepackage{mathpazo}
+%-------------------------------------------------------------------------------
+\usepackage{booktabs,threeparttable}
+\usepackage{graphicx}
+\usepackage{subfiles}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{physics}
+\usepackage{mathrsfs}
+\usepackage{mathtools}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{empheq}
+\usepackage{graphicx}
+\usepackage{dsfont}
+\usepackage{txfonts}
+\usepackage{soul} % Underlining
+%-------------------------------------------------------------------------------
+% CAPTIONS
+%-------------------------------------------------------------------------------
+\usepackage{caption}
+\usepackage{subcaption}
+\captionsetup{font=normalsize,labelfont={sc}, textfont={sc}}
+\captionsetup[sub]{font=small,labelfont={bf,sf}, textfont=normalfont}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{cancel} % Oblique Strikethroughs
+\usepackage[inline, shortlabels]{enumitem}
+% FOR TABLES
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\arraybackslash}m{#1}}
+% Indenting equations and paragraphs
+% \setlength{\mathindent}{0pt}
+% \setlength{\parindent}{0pt}
+
+% TITLING
+\usepackage{titlesec}
+\renewcommand{\thesubsubsection}{\thesubsection.\Alph{subsubsection}}
+\setcounter{secnumdepth}{4}
+
+%-------------------------------------------------------------------------------
+% HYPERLINKS
+%-------------------------------------------------------------------------------
+\usepackage{varioref}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=blue,      
+    urlcolor=blue,
+    pdftitle={Sagar Saxena},
+    pdfpagemode=FullScreen,
+}
+%-------------------------------------------------------------------------------
+% Multicolumns
+%-------------------------------------------------------------------------------
+\usepackage{multicol}
+\setlength\columnsep{24pt}
+
+%-------------------------------------------------------------------------------
+% THEOREMS
+%-------------------------------------------------------------------------------
+\let\openbox\undefined
+\usepackage{amsthm}
+\usepackage[capitalise]{cleveref}
+\usepackage[framemethod=tikz]{mdframed}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{many}
+\tcbuselibrary{theorems}
+\usepackage{varwidth}
+
+%Theorem with tcolorbox
+\newtcbtheorem[auto counter,number within=chapter]{thm}{Theorem}%
+{
+    enhanced,
+        sharp corners,
+        attach boxed title to top left={
+            xshift=-1mm,
+            yshift=-5mm,
+            yshifttext=-1mm
+        },
+        top=1.5em,
+        colback=white,
+        colframe=blue!75!black,
+        fonttitle=\bfseries,
+        boxed title style={
+            sharp corners,
+            size=small,
+            colback=blue!75!black,
+            colframe=blue!75!black,
+        } 
+}{theo}
+
+
+\newtcbtheorem[auto counter,number within=chapter, crefname={Lemma}{Lemma},
+  Crefname={Lemmas}{Lemmas}]{lem}{Lemma}%
+{
+    enhanced,
+        sharp corners,
+        attach boxed title to top left={
+            xshift=-1mm,
+            yshift=-5mm,
+            yshifttext=-1mm
+        },
+        top=1.5em,
+        colback=white,
+        colframe=blue!75!black,
+        fonttitle=\bfseries,
+        boxed title style={
+            sharp corners,
+            size=small,
+            colback=blue!75!black,
+            colframe=blue!75!black,
+        } 
+}{lem}
+
+
+% \newtheorem{thm}{Theorem}[section]
+% \theoremstyle{plain}
+% \newmdtheoremenv[
+%   linecolor=cyan,
+%   roundcorner=5pt,
+%   linewidth=1pt
+% ]{thm}{Theorem}[section]
+
+% \newtheorem{prop}[thm]{Proposition}
+% \newtheorem{cor}{Corollary}
+% \newtheorem{conj}{Conjecture}[section]
+% \newtheorem{exmp}{Example}[section]
+% \newtheorem*{note}{Note}
+
+\theoremstyle{definition}
+\newmdtheoremenv[
+  hidealllines=true,
+  leftline=true,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=0pt,
+]{defn}{Definition}[section]
+
+
+\theoremstyle{assumption}
+\newmdtheoremenv[
+  hidealllines=true,
+  leftline=true,
+  innerleftmargin=10pt,
+  innerrightmargin=10pt,
+  innertopmargin=0pt,
+]{ass}{Assumption}[section]
+
+\newenvironment{claim}[1]{\par\noindent\textbf{Claim: }\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\emph{Proof.}\space#1}{\leavevmode\unskip\penalty9999 \hbox{}\nobreak\hfill\quad\hbox{$\blacksquare$}}
+
+%-------------------------------------------------------------------------------
+% New Math Operators
+%-------------------------------------------------------------------------------
+\DeclareMathOperator{\n1}{\frac{1}{n}\sum_{i=1}^{n}}
+\DeclareMathOperator{\i2}{\frac{1}{\sqrt{n}}\sum_{i=1}^{n}}
+\DeclareMathOperator{\E}{\mathbb{E}}
+\DeclareMathOperator{\e}{\mathcal{E}}
+\DeclareMathOperator{\ii}{i \in \mathcal{I}}
+\DeclareMathOperator{\R}{\mathbb{R}}
+\DeclareMathOperator{\V}{\mathbb{V}}
+% \DeclareMathOperator{\p}{\text{Pr}}
+\DeclareMathOperator{\Cov}{\text{Cov}}
+\DeclareMathOperator{\Var}{\text{Var}}
+\DeclareMathOperator{\pref}{\succsim}
+\DeclareMathOperator{\preff}{\succ}
+\DeclareMathOperator*{\argminA}{arg\,min} 
+\DeclareMathOperator*{\argmaxA}{arg\,max} 
+\DeclareMathOperator*{\maxA}{max\;} 
+\DeclareMathOperator*{\plim}{plim}
+
+
+%-------------------------------------------------------------------------------
+% HEADER & FOOTER
+%-------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\headheight{15pt}
+\fancyhead[L]{ECON 2140: Econometric Methods}
+\fancyhead[R]{Harvard University}
+\fancyfoot[C]{Page \thepage\ of \pageref{LastPage}}
+%-------------------------------------------------------------------------------
+% TITLE PAGE
+%-------------------------------------------------------------------------------
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}} % Line on Title Page
+\title{ \Large \textsc{Spring 2018}
+		\\ 
+		\HRule{0.5pt} \\
+		\LARGE \textbf{\uppercase{ECON 2140: Econometric Methods}}
+		\HRule{2pt} \\ [0.5cm]
+		\Large \textsc{Professor Elie Tamer} \vspace*{1.5\baselineskip}} \date{}
+\author{\textbf{Compiled by}: Sagar Saxena, Roman Sigalov}
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}}
+
+% Chapter Author
+\makeatletter
+\newcommand{\chapterauthor}[1]{%
+  {\parindent0pt\vspace*{-25pt}%
+  \linespread{1.1}\large\scshape#1%
+  \par\nobreak\vspace*{35pt}}
+  \@afterheading%
+}
+\makeatother
+
+\begin{document}
+\maketitle
+\tableofcontents
+ 
+\subfile{wk1/week1}
+\subfile{wk2/week2}
+
+\end{document}
+
